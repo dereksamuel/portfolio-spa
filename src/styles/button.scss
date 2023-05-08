@@ -1,0 +1,71 @@
+@import './variables.scss';
+
+.button-container,
+.button-container--active {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+
+  &:hover .button--border {
+    cursor: pointer;
+    transform: translate(7px, 7px);
+    filter: brightness(1.5);
+  }
+}
+
+.button,
+.button--small,
+.button--border {
+  --bezel-width: 3;
+  --bezel-radius: 20px 0px 20px 0px;
+  --bezel-filled-bg: true;
+  color: var(--bezel-color);
+  filter: contrast(1.3);
+  transition: --bezel-color 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.button-container--active {
+  .button--border {
+    color: black;
+    font-weight: bold;
+    fill: black;
+    --bezel-color-bg: #7edbe9;
+
+    svg {
+      color: black;
+      fill: black;
+    }
+
+    cursor: pointer;
+    transform: translate(7px, 7px);
+    filter: brightness(1.5);
+  }
+}
+
+.button,
+.button--small {
+  --bezel-width: 1.5;
+  --bezel-filled-bg: true;
+  opacity: 0.8;
+  background: paint(bezel);
+
+  span {
+    opacity: 0;
+  }
+}
+
+.button--border {
+  position: absolute;
+  transition: 0.1s all ease-in;
+  transition-delay: 0.1s;
+  z-index: 2;
+  box-sizing: content-box;
+  left: -7px;
+  top: -7px;
+  white-space: nowrap;
+  background-image: paint(bezel);
+}

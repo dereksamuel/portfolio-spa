@@ -1,0 +1,53 @@
+@import '../../../styles/variables.scss';
+
+.hability {
+  gap: 30px;
+  grid-template-columns: 100px 1fr;
+  justify-items: center;
+  align-items: center;
+  max-width: fit-content;
+
+  &__container-img {
+    flex-direction: column;
+  }
+
+  .container-bars {
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &__item,
+    &__item--active {
+      width: 40px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: $color-secondary;
+    }
+
+    &__item--active {
+      background-color: $color-primary;
+    }
+  }
+}
+
+@media screen and (max-width: 909px) {
+  .hability {
+    .container-bars {
+      &__item,
+      &__item--active {
+        width: 7vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 628px) {
+  .hability {
+    .container-bars {
+      &__item,
+      &__item--active {
+        width: 3.5vw;
+      }
+    }
+  }
+}

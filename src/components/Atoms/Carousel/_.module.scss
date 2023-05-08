@@ -1,0 +1,124 @@
+$item-width: 100%; // Now we can use percentages!
+$item-separation: 0px; // This now is set with Js
+$viewer-distance: 1500px;
+
+.carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+
+	perspective: $viewer-distance;
+	overflow: hidden;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  // background-color: black;
+
+	> * {
+		flex: 0 0 auto;
+	}
+	
+	nav {
+		display: flex;
+		justify-content: center;
+		margin: 20px 0 0;
+
+		[data-testid="button"] {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    [data-testid="button"]:nth-child(2) {
+      left: auto;
+      right: 15px;
+    }
+	}
+  
+  &-card {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: bottom;
+  }
+}
+
+.carousel-content {
+  margin: 0;
+  width: $item-width;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  position: relative;
+
+  &--mobile {
+    display: none;
+  }
+  
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    height: 450px;
+    margin: 0 $item-separation / 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 1.2s all;
+    animation: fadeIn 1.2s ease-in-out forwards;
+
+    &:first-of-type {
+      position: relative;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 909px) {
+  .carousel {
+    nav {
+      display: none;
+    }
+  }
+
+  .carousel-content {
+    display: none;
+
+    &__item--mobile {
+      transform: scale(0.85);
+      opacity: 0.5;
+      scroll-snap-align: center;
+      scroll-behavior: smooth;
+      transition: 0.4s all;
+      min-height: 300px;
+      transition-delay: 0.7s;
+
+      img {
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+
+    &__item--mobile:first-child {
+      margin-top: 0;
+    }
+
+    &--mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      height: calc(100vh - 139px);
+    }
+  }
+}

@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './variables.scss';
+@import './stylesheet.scss';
+@import './button.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+  cursor: none;
+}
+
+audio {
+  display: none;
+}
+
+body {
+  background-color: $color-dark;
+  padding: 15px;
+
+  &:active .cursor {
+    transform: scale(0.7);
+    filter: brightness(1.5);
+  }
+
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url(https://www.transparenttextures.com/patterns/dark-denim-3.png), transparent;
+    background-repeat: repeat;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+html, body, body > div {
+  height: 100%;
+}
+
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.subtitle,
+.subtitle strong,
+hr {
+  color: $color-primary;
+}
+
+.cursor {
+  position: fixed;
+  width: 0;
+  z-index: 99;
+  transition: 0.1s transform;
+  filter: drop-shadow(0px 0px 30px $color-dark);
+
+  &__gunn {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    line-height: 96px;
+    z-index: 5;
+    animation: 6s infinite ease-in-out onRotate alternate-reverse;
+
+    path {
+      fill: $color-dark;
+    }
+  }
+
+  &__main,
+  &__main--border,
+  &__main::after,
+  &__main::before {
+    position: absolute;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(111, 247, 252, 0.582);
+    pointer-events: none;
+  }
+
+  &__main::after,
+  &__main::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 5px;
+    z-index: 4;
+    aspect-ratio: 1;
+    background-color: $color-dark;
+  }
+
+  &__main::before {
+    width: 10px;
+    height: 10px;
+    background-color: $color-primary;
+    border: none;
+    z-index: 7;
+  }
+
+  &__main--border {
+    width: 60px;
+    height: 60px;
+    border-width: 3px;
+    border-style: dashed;
+    animation: 10s infinite ease-in-out onRotate alternate forwards;
+  }
+}
+
+div.carousel-content__item--mobile--active {
+  opacity: 1;
+  margin: 0;
+  transform: scale(0.95, 1);
+}
+
+@keyframes onRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $color-secondary;
+  margin: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px $color-light;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 909px) {
+  * {
+    cursor: auto;
+  }
+  .cursor {
+    display: none;
+  }
+  p {
+    font-size: 16px;
+  }
+}
