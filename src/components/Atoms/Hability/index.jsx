@@ -1,4 +1,3 @@
-/* eslint-disable no-array-constructor */
 import React from 'react'
 import PropTypes from 'prop-types'
 

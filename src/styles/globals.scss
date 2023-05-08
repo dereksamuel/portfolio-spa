@@ -141,6 +141,22 @@ div.carousel-content__item--mobile--active {
   transform: scale(0.95, 1);
 }
 
+.not-found {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+
+  p {
+    margin-bottom: 30px;
+  }
+}
+
 @keyframes onRotate {
   0% {
     transform: rotate(0deg);

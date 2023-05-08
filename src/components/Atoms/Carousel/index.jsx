@@ -54,7 +54,6 @@ function Carousel() {
         const apothem = s / (2 * Math.tan(Math.PI / n))
         carouselContent.style.transformOrigin = `50% 50% ${-apothem}px`
 
-        // eslint-disable-next-line no-var
         for (var i = 0; i < n; i++) {
           childrenEls[i].style.paddingLeft = `${gap}px`
           childrenEls[i].style.paddingRight = `${gap}px`

@@ -10,6 +10,7 @@ import projects from './context/modules/projects.json'
 
 import './styles/globals.scss'
 import Home from './components/Pages/Home'
+import NotFound from './components/Pages/NotFound'
 import Cursor from './components/Atoms/Cursor'
 import Projects from './components/Pages/Projects'
 
@@ -23,11 +24,15 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />
+      element: <Home />,
     },
     {
       path: '/projects',
-      element: <Projects />
+      element: <Projects />,
+    },
+    {
+      path: '*',
+      element: <NotFound />
     }
   ])
   useLoadHoudini()
