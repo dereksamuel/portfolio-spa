@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import GeneralBorder from './components/Molecules/GeneralBorder'
-import useLoadHoudini from './hooks/useLoadHoudini'
+// import useLoadHoudini from './hooks/useLoadHoudini'
 
 import { StoreContext } from './context/store'
 import aboutMe from './context/modules/about_me.json'
@@ -32,16 +32,20 @@ function App() {
     },
     {
       path: '*',
-      element: <NotFound />
-    }
+      element: <NotFound />,
+    },
   ])
-  useLoadHoudini()
+  // useLoadHoudini()
 
   return (
     <StoreContext.Provider value={{ value, setValue }}>
       <GeneralBorder>
+        <div className="cortner"></div>
+        <div className="cortner-border"></div>
         <Cursor />
         <RouterProvider router={router} />
+        <div className="cortner"></div>
+        <div className="cortner-border"></div>
       </GeneralBorder>
     </StoreContext.Provider>
   )

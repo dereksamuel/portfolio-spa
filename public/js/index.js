@@ -1,3 +1,3 @@
-if ('paintWorklet' in CSS) {
-  CSS.paintWorklet.addModule('js/bezel.js')
-}
+// if ('paintWorklet' in CSS) {
+//   CSS.paintWorklet.addModule('js/bezel.js')
+// }

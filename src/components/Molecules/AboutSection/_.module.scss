@@ -1,28 +1,21 @@
 @import '../../../styles/variables.scss';
 
 .about-section {
-  --bezel-filled: false;
-  --bezel-filled-bg: true;
-  --bezel-color: rgb(0, 0, 0);
-  --bezel-color-bg: rgb(0, 0, 0);
-  --bezel-width: 10;
-  --bezel-radius: 15px 15px 15px 15px;
-
-  background: paint(bezel);
   width: fit-content;
   color: rgb(221, 221, 221);
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.158));
   max-width: 570px;
   height: fit-content;
-  max-height: 100%;
+  max-height: 90%;
   overflow-y: auto;
   display: inline-block;
   grid-column: 2 / 3;
-  transform: scaleX(0);
-  opacity: 0;
+  // transform: scaleX(0);
+  // opacity: 0;
   transform-origin: left center;
   transition: 0.4s all;
-  animation: cliped 0.4s ease-in forwards;
+  // animation: cliped 0.4s ease-in forwards;
+  clip-path: polygon(4% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0% 4%);
+  background-color: rgb(0, 0, 0);
 }
 
 .social-media {
@@ -36,7 +29,8 @@
   }
 
   a,
-  a svg {
+  a svg,
+  a p {
     color: $color-primary;
     fill: $color-primary;
   }
@@ -60,6 +54,7 @@
     max-width: 100%;
     max-height: fit-content;
     margin-bottom: 30px;
+    clip-path: polygon(3% 0%, 97% 0%, 100% 3%, 100% 97%, 97% 100%, 3% 100%, 0 97%, 0% 3%);
   }
 }
 
@@ -74,5 +69,11 @@
       width: 50px;
       height: 50px;
     }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .about-section {
+    clip-path: polygon(6% 0%, 94% 0%, 100% 4%, 100% 96%, 94% 100%, 6% 100%, 0 96%, 0% 4%);
   }
 }

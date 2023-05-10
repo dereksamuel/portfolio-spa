@@ -32,6 +32,7 @@ body {
     content: '';
     position: fixed;
     inset: 0;
+    z-index: 100;
     background: url(https://www.transparenttextures.com/patterns/dark-denim-3.png), transparent;
     background-repeat: repeat;
     opacity: 0.4;
@@ -75,7 +76,7 @@ hr {
 .cursor {
   position: fixed;
   width: 0;
-  z-index: 99;
+  z-index: 200;
   transition: 0.1s transform;
   filter: drop-shadow(0px 0px 30px $color-dark);
 
@@ -155,6 +156,87 @@ div.carousel-content__item--mobile--active {
   p {
     margin-bottom: 30px;
   }
+}
+
+.cortner,
+.cortner-border {
+  position: fixed;
+  z-index: 101;
+  left: 15px;
+  top: 15px;
+  width: 25px;
+  height: 25px;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+  background-color: $color-dark;
+}
+
+.cortner-border {
+  z-index: 99;
+  width: 28.5px;
+  height: 28.5px;
+  background-color: $color-primary;
+  opacity: 0.65;
+}
+
+.cortner.about {
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+}
+
+.cortner-border.about {
+  width: 26px;
+  height: 26px;
+  z-index: 1;
+  background-color: rgb(31, 31, 31);
+  opacity: 1;
+}
+
+.cortner-border.about,
+.cortner.about {
+  top: 0;
+  left: 0;
+}
+
+.cortner-border:nth-child(even),
+.cortner:nth-child(even) {
+  top: auto;
+  bottom: 15px;
+  left: auto;
+  right: 15px;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.cortner-border.cortner-border-about--1,
+.cortner.cortner-about--1 {
+  inset: auto;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0 100%, 100% 0, 0 0);
+}
+
+.cortner-border.cortner-border-about--2,
+.cortner.cortner-about--2 {
+  inset: auto;
+  right: 0;
+  bottom: 10%;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.cortner-border.cortner-border-about--3,
+.cortner.cortner-about--3 {
+  inset: auto;
+  left: 0;
+  bottom: 10%;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.cortner-border.cortner-border-about--4,
+.cortner.cortner-about--4 {
+  inset: auto;
+  right: 0;
+  top: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
 @keyframes onRotate {

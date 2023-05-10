@@ -95,7 +95,7 @@ $viewer-distance: 1500px;
 
     &__item--mobile {
       transform: scale(0.85);
-      opacity: 0.5;
+      // opacity: 0.5;
       scroll-snap-align: center;
       scroll-behavior: smooth;
       transition: 0.4s all;

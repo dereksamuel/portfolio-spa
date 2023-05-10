@@ -27,31 +27,19 @@
   }
 }
 
-.general-border,
-.general-border::after {
-  --bezel-filled: false;
-  --bezel-filled-bg: false;
-  --bezel-color: #7edbe998;
-  --bezel-width: 2;
-  --bezel-radius: 20px 0px 20px 0px;
-
+.general-border {
   position: fixed;
-  background: paint(bezel);
+  border: 2px solid $color-primary;
   z-index: 101;
   inset: 15px;
   pointer-events: none;
   opacity: 0.65;
 }
 
-.general-border::after {
-  content: '';
-  position: fixed;
-}
-
 .window {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 101;
   pointer-events: none;
   box-shadow: inset 0px 0px 150px rgb(64, 92, 90);
 }

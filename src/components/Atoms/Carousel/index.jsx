@@ -71,40 +71,9 @@ function Carousel() {
         }
       }
 
-      const isMobile = true
-
-      if (isMobile) {
-        onStartObservable()
-      }
-
       clearTimeout(timeout)
     }, 300)
   }, [])
-
-  function onStartObservable() {
-    const allItems = document.querySelectorAll('#carousel-content__item--mobile')
-    const classText = 'carousel-content__item--mobile--active'
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(classText)
-          } else {
-            entry.target.classList.remove(classText)
-          }
-        })
-      },
-      {
-        rootMargin: '0px',
-        threshold: 1.0,
-      }
-    )
-
-    allItems.forEach((item) => {
-      observer.observe(item)
-    })
-  }
 
   function onPrevOrNext(e, id) {
     e.stopPropagation()
@@ -143,10 +112,10 @@ function Carousel() {
         ))}
       </div>
       <nav>
-        <Button onClick={(e) => onPrevOrNext(e, 'prev')}>
+        <Button withIcon onClick={(e) => onPrevOrNext(e, 'prev')}>
           <IoMdArrowDropleft />
         </Button>
-        <Button onClick={(e) => onPrevOrNext(e, 'next')}>
+        <Button withIcon onClick={(e) => onPrevOrNext(e, 'next')}>
           <IoMdArrowDropright />
         </Button>
       </nav>

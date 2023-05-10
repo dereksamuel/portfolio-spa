@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useContext, useRef } from 'react'
-import { IoLogoGithub, IoLogoLinkedin, IoMdCall, IoMdMail, IoMdPause, IoMdPlay } from 'react-icons/io'
+import { IoLogoGithub, IoLogoLinkedin, IoMdPause, IoMdPlay } from 'react-icons/io'
 
 import Hability from '../../../components/Atoms/Hability'
 import Button from '../../../components/Atoms/Button'
@@ -34,18 +34,14 @@ function AboutSection() {
       subtitle: 'Social media & Contact',
       html: (
         <div className={`${styles['social-media']} flex p-5 text-center`}>
-          <a className="text-xs md:text-sm" href="https://github.com/dereksamuel" target="_blank" rel="noreferrer">
-            <IoLogoGithub size={30} /> Github
+          <a className="flex items-center" href="https://github.com/dereksamuel" target="_blank" rel="noreferrer">
+            <IoLogoGithub size={30} />
+            <p className="text-sm md:text-base ml-2">Github</p>
           </a>
-          <a className="text-xs md:text-sm" href="https://www.linkedin.com/in/derek-samuel-pa%C3%BAl-pe%C3%B1a-55a7771b7/" target="_blank" rel="noreferrer">
-            <IoLogoLinkedin size={30} /> Linkedin
+          <a className="flex items-center" href="https://www.linkedin.com/in/derek-samuel-pa%C3%BAl-pe%C3%B1a-55a7771b7/" target="_blank" rel="noreferrer">
+            <IoLogoLinkedin size={30} />
+            <p className="text-sm md:text-base ml-2">Linkedin</p>
           </a>
-          <span className="text-xs md:text-sm">
-            <IoMdCall size={30} /> +57 315 449 454 7
-          </span>
-          <span className="text-xs md:text-sm">
-            <IoMdMail size={30} /> 11dereksamuel@gmail.com
-          </span>
         </div>
       ),
     },
