@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io'
 
-import Button from '../Button'
+import Button from '../../Atoms/Button'
 import styles from './_.module.scss'
 
 import comicCssSrc from '../../../assets/images/comic_css.png'
@@ -101,7 +101,7 @@ function Carousel() {
           </div>
         ))}
       </div>
-      <div className={styles['carousel-content--mobile']}>
+      <div className={`${styles['carousel-content--mobile']} pb-12`}>
         {projects.map((project, index) => (
           <div id="carousel-content__item--mobile" className={styles['carousel-content__item--mobile']} key={index}>
             <a href={project.href} target="__blank">
