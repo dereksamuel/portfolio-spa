@@ -27,7 +27,7 @@ function Scene({ children }) {
   return (
     <>
       {!loading && (
-        <Canvas dpr={dpr} className={styles.canvas} shadows camera={{ position: [0, 1, 6], fov: 20 }}>
+        <Canvas dpr={dpr} className={styles.canvas} shadows camera={{ position: [0, 1, 5.5], fov: 20 }}>
           {/* <ambientLight color="yellow" /> */}
           <directionalLight intensity={1} position={[0, 0, 50]} color="white" />
           <Suspense fallback={null}>{children}</Suspense>
